@@ -14,6 +14,7 @@ public class DiamondManager : MonoBehaviour
     //public Transform[] spawnPoints;  // Assign in Inspector
     public int diamondCount = 0;
 
+    private List<int> lastUsedIndices = new List<int>();
 
     private void Awake()
     {
@@ -54,8 +55,10 @@ public class DiamondManager : MonoBehaviour
            // diamond.gameObject.SetActive(false);
            Destroy(diamond.gameObject);
         }
-        diamondCount++;
+        
         Debug.Log("Diamonds collected!");
+        diamondCount++;
+        SoundManager.Instance.PlayDiamondCollectSound();
 
         StartCoroutine(RespawnDiamonds());
     }
@@ -80,12 +83,15 @@ public class DiamondManager : MonoBehaviour
             do
             {
                 index = Random.Range(0, spawnPoints.Count);
-            } while (usedIndices.Contains(index));
+            } while (usedIndices.Contains(index) || lastUsedIndices.Contains(index));
 
             usedIndices.Add(index);
 
             GameObject newDiamond = Instantiate(diamondPrefab, spawnPoints[index].position, Quaternion.identity);
             diamonds[i] = newDiamond.GetComponent<DiamondCollector>();
         }
+
+        // Update the record of last used spawn indices
+        lastUsedIndices = usedIndices;
     }
 }
