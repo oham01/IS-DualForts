@@ -7,15 +7,16 @@ public class UIManager : MonoBehaviour
 {
     public static UIManager Instance;
 
-    // Start is called before the first frame update
-    void Start()
+    public Text diamondCountText;
+
+    void Awake()
     {
-        
+        Instance = this;
+
     }
 
-    // Update is called once per frame
-    void Update()
+    public void UpdateDiamondsCount(int count) // 1
     {
-        
+        diamondCountText.text = count.ToString();
     }
 }

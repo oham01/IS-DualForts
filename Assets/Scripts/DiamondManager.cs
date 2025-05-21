@@ -59,6 +59,7 @@ public class DiamondManager : MonoBehaviour
         Debug.Log("Diamonds collected!");
         diamondCount++;
         SoundManager.Instance.PlayDiamondCollectSound();
+        UIManager.Instance.UpdateDiamondsCount(diamondCount);
 
         StartCoroutine(RespawnDiamonds());
     }
