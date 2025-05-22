@@ -11,8 +11,6 @@ public class DiamondManager : MonoBehaviour
     public GameObject diamondPrefab; // Assign your diamond prefab
 
     public List<Transform> spawnPoints = new List<Transform>();
-    //public Transform[] spawnPoints;  // Assign in Inspector
-    public int diamondCount = 0;
 
     private List<int> lastUsedIndices = new List<int>();
 
@@ -24,13 +22,6 @@ public class DiamondManager : MonoBehaviour
             return;
         }
         Instance = this;
-
-   /*     // Find both diamonds at start
-        diamonds = FindObjectsOfType<DiamondCollector>();
-        if (diamonds.Length != 2)
-        {
-            Debug.LogError("DiamondManager: There must be exactly 2 diamonds in the scene.");
-        }*/
     }
 
     private void Start()
@@ -52,16 +43,13 @@ public class DiamondManager : MonoBehaviour
     {
         foreach (var diamond in diamonds)
         {
-           // diamond.gameObject.SetActive(false);
            Destroy(diamond.gameObject);
         }
         
         Debug.Log("Diamonds collected!");
-        diamondCount++;
-        SoundManager.Instance.PlayDiamondCollectSound();
-        UIManager.Instance.UpdateDiamondsCount(diamondCount);
+        GameStateManager.Instance.GotDiamonds();
 
-        StartCoroutine(RespawnDiamonds());
+       StartCoroutine(RespawnDiamonds());
     }
 
     private IEnumerator RespawnDiamonds()
