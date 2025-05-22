@@ -3,27 +3,39 @@ using UnityEngine;
 public class TowerSpawner : MonoBehaviour
 {
     public GameObject towerPrefab;
+    private BuildZone currentBuildZone = null;
 
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.P)) // Puedes personalizar esta tecla
+        if (Input.GetKeyDown(KeyCode.P) && currentBuildZone != null && !currentBuildZone.isUsed)
         {
-            SpawnTower();
+            SpawnTowerAtZone();
         }
     }
 
-    void SpawnTower()
+    void SpawnTowerAtZone()
     {
-        if (towerPrefab != null)
-        {
-            Vector3 position = transform.position;
-            Quaternion rotation = towerPrefab.transform.rotation; // Usa la rotación del prefab sin forzarla
+        Instantiate(towerPrefab, currentBuildZone.transform.position, towerPrefab.transform.rotation);
+        currentBuildZone.isUsed = true; // Marcar la zona como usada
+        Debug.Log("Torre colocada en zona: " + currentBuildZone.name);
+    }
 
-            Instantiate(towerPrefab, position, rotation);
-        }
-        else
+    void OnTriggerEnter(Collider other)
+    {
+        if (other.CompareTag("BuildZone"))
         {
-            Debug.LogWarning("Tower prefab no asignado en " + gameObject.name);
+            currentBuildZone = other.GetComponent<BuildZone>();
+        }
+    }
+
+    void OnTriggerExit(Collider other)
+    {
+        if (other.CompareTag("BuildZone"))
+        {
+            if (currentBuildZone != null && other.GetComponent<BuildZone>() == currentBuildZone)
+            {
+                currentBuildZone = null;
+            }
         }
     }
 }
