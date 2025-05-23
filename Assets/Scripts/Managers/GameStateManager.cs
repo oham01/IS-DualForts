@@ -57,4 +57,10 @@ public class GameStateManager : MonoBehaviour
     {
         gameEnded = true;
     }
+
+    public void KilledEnemy(int value)
+    {
+        diamondCount += value;
+        UIManager.Instance.UpdateDiamondsCount(diamondCount);
+    }
 }

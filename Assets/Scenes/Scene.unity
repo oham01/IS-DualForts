@@ -4921,6 +4921,7 @@ MonoBehaviour:
   currentLives: 0
   startingDiamonds: 0
   diamondCount: 0
+  gameEnded: 0
 --- !u!1 &1089978505
 GameObject:
   m_ObjectHideFlags: 0
@@ -6147,6 +6148,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   towerPrefab: {fileID: 2307196585089326411, guid: 92e451003ad630843978e3c5b532a3f7, type: 3}
+  spawnHeight: 1
 --- !u!54 &1440896354
 Rigidbody:
   m_ObjectHideFlags: 0

@@ -2,12 +2,17 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class EnemyMovement : MonoBehaviour
+public class Enemy : MonoBehaviour
 {
+    // Enemy stats
     public float speed = 15.0f;
+    public int health = 100;
+    public int diamondValue = 10;
 
     private Transform target; // The next waypoint to walk to
     private int waypointIndex = 0; // The index in the waypoint array to target
+
+    public GameObject deathEffect;
 
     // Start is called before the first frame update
     void Start()
@@ -43,4 +48,25 @@ public class EnemyMovement : MonoBehaviour
             target = Waypoints.waypoints[waypointIndex];
         }
     }
+
+    public void TakeDamage(int damage)
+    {
+        health -= damage;
+
+        if(health <= 0)
+        {
+            Die();
+        }
+    }
+
+    private void Die()
+    {
+        GameStateManager.Instance.KilledEnemy(diamondValue);
+
+        GameObject effect = (GameObject)Instantiate(deathEffect, transform.position, Quaternion.identity);
+        Destroy(effect, 2.0f);
+
+        Destroy(gameObject);
+    }
+
 }
