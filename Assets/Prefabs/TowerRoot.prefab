@@ -9,6 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5274940371739054626}
+  - component: {fileID: 4941717048957837808}
   m_Layer: 0
   m_Name: TowerRoot
   m_TagString: Untagged
@@ -31,6 +32,22 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &4941717048957837808
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2307196585089326411}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8524c9446429b094ba891c41391f267b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bulletPrefab: {fileID: 5142520702175152734, guid: 5c4adccaecb76b14eba756b4568c477d, type: 3}
+  firePoint: {fileID: 5274940371739054626}
+  range: 15
+  fireRate: 1
 --- !u!1001 &7848255819759279962
 PrefabInstance:
   m_ObjectHideFlags: 0
