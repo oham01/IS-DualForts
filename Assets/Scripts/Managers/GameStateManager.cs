@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class GameStateManager : MonoBehaviour
 {
@@ -13,8 +14,11 @@ public class GameStateManager : MonoBehaviour
     public int startingDiamonds = 0;
     public int diamondCount;
 
-    public bool gameEnded = false;
-    public GameObject GameOverUI;
+    public bool gameEnded;
+
+    public static int roundsSurvived;
+
+    public RectTransform worldSpaceButton; 
 
     void Awake()
     {
@@ -25,6 +29,17 @@ public class GameStateManager : MonoBehaviour
     {
         diamondCount = startingDiamonds;
         currentLives = startingLives;
+        gameEnded = false;
+        roundsSurvived = 0;
+    }
+
+    void Update()
+    {
+        if (Input.GetKeyDown("e"))
+        {
+            EndGame();
+        }
+
     }
 
     public void GotDiamonds()
@@ -60,15 +75,26 @@ public class GameStateManager : MonoBehaviour
         }
     }
 
-    public void EndGame()
-    {
-        gameEnded = true;
-        UIManager.Instance.ShowGameOver();
-    }
-
     public void KilledEnemy(int value)
     {
         diamondCount += value;
         UIManager.Instance.UpdateDiamondsCount(diamondCount);
+    }
+
+    public void IncreaseRound()
+    {
+        roundsSurvived++;
+    }
+
+
+    public void EndGame()
+    {
+        gameEnded = true;
+        UIManager.Instance.ShowGameOver(roundsSurvived);
+    }
+
+    public void Retry()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex); // Reload the active scene
     }
 }

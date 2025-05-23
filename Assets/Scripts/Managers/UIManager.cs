@@ -11,6 +11,8 @@ public class UIManager : MonoBehaviour
     public Text livesCountText;
 
     public GameObject gameOverUI;
+    public Text roundsSurvived;
+
     void Awake()
     {
         Instance = this;
@@ -27,8 +29,9 @@ public class UIManager : MonoBehaviour
         livesCountText.text = count.ToString();
     }
 
-    public void ShowGameOver()
+    public void ShowGameOver(int count)
     {
+        roundsSurvived.text = count.ToString();
         gameOverUI.SetActive(true);
     }
 }
