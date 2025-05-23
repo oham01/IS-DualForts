@@ -5,11 +5,30 @@ public class TowerSpawner : MonoBehaviour
     public GameObject towerPrefab;
     private BuildZone currentBuildZone = null;
 
+    public float spawnHeight = 1.0f;
+
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.P) && currentBuildZone != null && !currentBuildZone.isUsed)
+/*        if (Input.GetKeyDown(KeyCode.P) && currentBuildZone != null && !currentBuildZone.isUsed)
         {
             SpawnTowerAtZone();
+        }*/
+
+        if (currentBuildZone != null && !currentBuildZone.isUsed)
+        {
+            float playerY = transform.position.y;
+
+            // Physical height trigger by tracker touching ground
+            if (playerY <= spawnHeight)
+            {
+                SpawnTowerAtZone();
+            }
+            
+            // Place tower with P to debug
+            if (Input.GetKeyDown(KeyCode.P))
+            {
+                SpawnTowerAtZone();
+            }
         }
     }
 
