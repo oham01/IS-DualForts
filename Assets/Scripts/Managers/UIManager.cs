@@ -10,6 +10,7 @@ public class UIManager : MonoBehaviour
     public Text diamondCountText;
     public Text livesCountText;
 
+    public GameObject gameOverUI;
     void Awake()
     {
         Instance = this;
@@ -24,5 +25,10 @@ public class UIManager : MonoBehaviour
     public void UpdateLivesCount(int count)
     {
         livesCountText.text = count.ToString();
+    }
+
+    public void ShowGameOver()
+    {
+        gameOverUI.SetActive(true);
     }
 }

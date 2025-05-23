@@ -14,6 +14,7 @@ public class GameStateManager : MonoBehaviour
     public int diamondCount;
 
     public bool gameEnded = false;
+    public GameObject GameOverUI;
 
     void Awake()
     {
@@ -35,17 +36,23 @@ public class GameStateManager : MonoBehaviour
 
     private void GameOver()
     {
-
         if(gameEnded) return;
         Debug.Log("GAME OVER");
-        //UIManager.Instance.ShowGameOverWindow(); // doesn't exist yet
         EndGame();
     }
 
     public void LoseLife()
     {
         currentLives -= 50;
-        UIManager.Instance.UpdateLivesCount(currentLives);
+        if(currentLives < 0)
+        {
+            UIManager.Instance.UpdateLivesCount(0);
+        }
+        else
+        {
+            UIManager.Instance.UpdateLivesCount(currentLives);
+        }
+        
 
         if(currentLives < 0)
         {
@@ -56,6 +63,7 @@ public class GameStateManager : MonoBehaviour
     public void EndGame()
     {
         gameEnded = true;
+        UIManager.Instance.ShowGameOver();
     }
 
     public void KilledEnemy(int value)
