@@ -2,9 +2,10 @@ using UnityEngine;
 
 public class TowerSpawner : MonoBehaviour
 {
-    public GameObject towerPrefab;
     private BuildZone currentBuildZone = null;
 
+    public TowerBlueprint towerToBuild = null;
+    
     public float spawnHeight = 1.0f;
 
     void Update()
@@ -14,7 +15,7 @@ public class TowerSpawner : MonoBehaviour
             SpawnTowerAtZone();
         }*/
 
-        if (currentBuildZone != null && !currentBuildZone.isUsed)
+        if (currentBuildZone != null && !currentBuildZone.isUsed && towerToBuild != null)
         {
             float playerY = transform.position.y;
 
@@ -34,7 +35,13 @@ public class TowerSpawner : MonoBehaviour
 
     void SpawnTowerAtZone()
     {
-        Instantiate(towerPrefab, currentBuildZone.transform.position, towerPrefab.transform.rotation);
+        if (towerToBuild == null || towerToBuild.TowerPrefab == null)
+        {
+            Debug.LogWarning("No tower blueprint selected!");
+            return;
+        }
+
+        Instantiate(towerToBuild.TowerPrefab, currentBuildZone.transform.position, towerToBuild.TowerPrefab.transform.rotation);
         currentBuildZone.isUsed = true; // Marcar la zona como usada
         Debug.Log("Torre colocada en zona: " + currentBuildZone.name);
     }
@@ -56,5 +63,15 @@ public class TowerSpawner : MonoBehaviour
                 currentBuildZone = null;
             }
         }
+    }
+
+    public void SelectTowerToBuild(TowerBlueprint tower)
+    {
+        towerToBuild = tower;
+    }
+
+    public void DeselectTower()
+    {
+        towerToBuild = null;
     }
 }
