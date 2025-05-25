@@ -15,8 +15,6 @@ public class WaveSpawner : MonoBehaviour
     private int waveNumber = 0;
     public static int enemiesAlive = 0;
 
-    public Text waveCountdownText;
-
     public Wave[] waves;
 
     // Spawn enemies every countdown 
@@ -36,10 +34,7 @@ public class WaveSpawner : MonoBehaviour
         }
 
         countdown = countdown - Time.deltaTime;
-
-        countdown = Mathf.Clamp(countdown, 0, Mathf.Infinity); // Clamp countdown value to be strictly positive
-
-        waveCountdownText.text = countdown.ToString();
+        UIManager.Instance.UpdateCountdown(countdown);
     }
 
     private IEnumerator SpawnWave()
@@ -53,6 +48,7 @@ public class WaveSpawner : MonoBehaviour
             yield return new WaitForSeconds(1.0f/wave.rate);
         }
         waveNumber++;
+        UIManager.Instance.UpdateWaveNumber(waveNumber);
 
         if(waveNumber == waves.Length)
         {

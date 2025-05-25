@@ -13,6 +13,9 @@ public class UIManager : MonoBehaviour
     public GameObject gameOverUI;
     public Text roundsSurvived;
 
+    public Text waveCountdownText;
+    public Text waveNumberText;
+
     void Awake()
     {
         Instance = this;
@@ -28,10 +31,24 @@ public class UIManager : MonoBehaviour
     {
         livesCountText.text = count.ToString();
     }
+    
+    public void UpdateWaveNumber(int number)
+    {
+        waveNumberText.text = "Wave: " + number.ToString();
+    }
+
+    public void UpdateCountdown(float countdown)
+    {
+        countdown = Mathf.Clamp(countdown, 0, Mathf.Infinity); // Clamp countdown value to be strictly positive
+
+        waveCountdownText.text = string.Format("{0:00.00}", countdown);
+    }
 
     public void ShowGameOver(int count)
     {
         roundsSurvived.text = count.ToString();
         gameOverUI.SetActive(true);
     }
+
+
 }
