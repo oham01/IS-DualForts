@@ -8,6 +8,7 @@ public class Enemy : MonoBehaviour
     public float speed = 15.0f;
     public int health = 100;
     public int diamondValue = 10;
+    public int damage = 60;
 
     private Transform target; // The next waypoint to walk to
     private int waypointIndex = 0; // The index in the waypoint array to target
@@ -38,7 +39,8 @@ public class Enemy : MonoBehaviour
     {
         if (waypointIndex >= Waypoints.waypoints.Length - 1)
         {
-            GameStateManager.Instance.LoseLife();
+            GameStateManager.Instance.LoseLife(damage);
+            WaveSpawner.enemiesAlive--;
             Destroy(gameObject);
             
         }
@@ -65,6 +67,8 @@ public class Enemy : MonoBehaviour
 
         GameObject effect = (GameObject)Instantiate(deathEffect, transform.position, Quaternion.identity);
         Destroy(effect, 2.0f);
+
+        WaveSpawner.enemiesAlive--;
 
         Destroy(gameObject);
     }

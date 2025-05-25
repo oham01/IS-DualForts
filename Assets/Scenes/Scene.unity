@@ -1264,12 +1264,27 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 739a0d7ea09e0dd4dae8d76a743962ed, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemyPrefab: {fileID: 2332828978059243644, guid: e62fed41bf180524aafc428390e83e50, type: 3}
   spawnPosition: {fileID: 618347174}
-  timeBetweenWaves: 10
+  timeBetweenWaves: 5
   timeBetweenSpawns: 0.25
   countdown: 2
   waveCountdownText: {fileID: 121394299}
+  waves:
+  - enemy: {fileID: 2332828978059243644, guid: e62fed41bf180524aafc428390e83e50, type: 3}
+    count: 3
+    rate: 2
+  - enemy: {fileID: 2332828978059243644, guid: 88adae8f10da82946b203d40780654c8, type: 3}
+    count: 1
+    rate: 2
+  - enemy: {fileID: 2332828978059243644, guid: 43fefeeb48208b947924a3d0387f1d49, type: 3}
+    count: 1
+    rate: 2
+  - enemy: {fileID: 0}
+    count: 0
+    rate: 0
+  - enemy: {fileID: 0}
+    count: 0
+    rate: 0
 --- !u!1 &220600112
 GameObject:
   m_ObjectHideFlags: 0
@@ -6842,6 +6857,7 @@ GameObject:
   - component: {fileID: 1471923276}
   - component: {fileID: 1471923280}
   - component: {fileID: 1471923281}
+  - component: {fileID: 1471923282}
   m_Layer: 0
   m_Name: Player2
   m_TagString: Player
@@ -6956,6 +6972,20 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &1471923282
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1471923275}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eca6d06ec91ad714986dbc14d5e768ba, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  towerPrefab: {fileID: 2307196585089326411, guid: 92e451003ad630843978e3c5b532a3f7, type: 3}
+  spawnHeight: 1
 --- !u!1 &1483708435
 GameObject:
   m_ObjectHideFlags: 0

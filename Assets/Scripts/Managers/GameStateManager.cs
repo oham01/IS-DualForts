@@ -56,9 +56,9 @@ public class GameStateManager : MonoBehaviour
         EndGame();
     }
 
-    public void LoseLife()
+    public void LoseLife(int amount)
     {
-        currentLives -= 50;
+        currentLives -= amount;
         if(currentLives < 0)
         {
             UIManager.Instance.UpdateLivesCount(0);
