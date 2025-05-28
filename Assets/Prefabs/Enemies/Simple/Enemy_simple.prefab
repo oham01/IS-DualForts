@@ -1087,7 +1087,7 @@ SkinnedMeshRenderer:
   m_RenderingLayerMask: 257
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 4470128894053120983, guid: e4c88fe2e81511d4dae9da620550ecf9, type: 3}
+  - {fileID: 2100000, guid: cfeaabdb17620ab42911afe1c7dba607, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -5406,7 +5406,7 @@ SkinnedMeshRenderer:
   m_RenderingLayerMask: 257
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 4470128894053120983, guid: e4c88fe2e81511d4dae9da620550ecf9, type: 3}
+  - {fileID: 2100000, guid: 0a8b46fb096f0e3498f06f2d6d89d41b, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -9954,7 +9954,7 @@ SkinnedMeshRenderer:
   m_RenderingLayerMask: 257
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 4470128894053120983, guid: e4c88fe2e81511d4dae9da620550ecf9, type: 3}
+  - {fileID: 2100000, guid: 4ac00d24fb85b6546a2cfadf3970d377, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -13545,7 +13545,7 @@ SkinnedMeshRenderer:
   m_RenderingLayerMask: 257
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 4470128894053120983, guid: e4c88fe2e81511d4dae9da620550ecf9, type: 3}
+  - {fileID: 2100000, guid: 03709e5efba90694eaa532e4911057b0, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -16656,7 +16656,7 @@ SkinnedMeshRenderer:
   m_RenderingLayerMask: 257
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 4470128894053120983, guid: e4c88fe2e81511d4dae9da620550ecf9, type: 3}
+  - {fileID: 2100000, guid: 48237522d09b31d4c80792e3e774f437, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -23966,7 +23966,7 @@ GameObject:
   - component: {fileID: 1002669896741387481}
   m_Layer: 0
   m_Name: Enemy_simple
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -24012,7 +24012,7 @@ MonoBehaviour:
   health: 100
   diamondValue: 10
   damage: 60
-  deathEffect: {fileID: 0}
+  deathEffect: {fileID: 2775357357664373769, guid: 10a1fb6a6363b1a4a94cff2ed2a7d08c, type: 3}
 --- !u!135 &1002669896741387481
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -34727,7 +34727,7 @@ SkinnedMeshRenderer:
   m_RenderingLayerMask: 257
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 4470128894053120983, guid: e4c88fe2e81511d4dae9da620550ecf9, type: 3}
+  - {fileID: 2100000, guid: e8f68e9500a70f3459a3701ea367e386, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
