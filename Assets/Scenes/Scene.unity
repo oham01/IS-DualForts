@@ -3441,7 +3441,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   tower1Blueprint:
     TowerPrefab: {fileID: 2307196585089326411, guid: 92e451003ad630843978e3c5b532a3f7, type: 3}
-    cost: 0
+    cost: 100
   tower2Blueprint:
     TowerPrefab: {fileID: 1882528618866688279, guid: 17136b623c188ad40835e0b4d98b04f0, type: 3}
     cost: 0

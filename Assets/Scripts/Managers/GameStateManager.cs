@@ -31,6 +31,7 @@ public class GameStateManager : MonoBehaviour
         currentLives = startingLives;
         gameEnded = false;
         roundsSurvived = 0;
+        UIManager.Instance.UpdateDiamondsCount(diamondCount);
     }
 
     void Update()
@@ -42,9 +43,9 @@ public class GameStateManager : MonoBehaviour
 
     }
 
-    public void GotDiamonds()
+    public void GotDiamonds(int value)
     {
-        diamondCount++;
+        diamondCount+= value;
         UIManager.Instance.UpdateDiamondsCount(diamondCount);
         SoundManager.Instance.PlayDiamondCollectSound();
     }

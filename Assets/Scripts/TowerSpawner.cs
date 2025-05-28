@@ -41,9 +41,22 @@ public class TowerSpawner : MonoBehaviour
             return;
         }
 
+        // Check if player can afford the tower
+        if (GameStateManager.Instance.diamondCount < towerToBuild.cost)
+        {
+            Debug.LogWarning("Not enough diamonds to place tower.");
+            return;
+        }
+
+        // Buy the cost
+        GameStateManager.Instance.GotDiamonds(-towerToBuild.cost);
+       // GameStateManager.Instance.diamondCount -= towerToBuild.cost;
+        //UIManager.Instance.UpdateDiamondsCount(GameStateManager.Instance.diamondCount);
+
         Instantiate(towerToBuild.TowerPrefab, currentBuildZone.transform.position, towerToBuild.TowerPrefab.transform.rotation);
         currentBuildZone.isUsed = true; // Marcar la zona como usada
         Debug.Log("Torre colocada en zona: " + currentBuildZone.name);
+        DeselectTower();
     }
 
     void OnTriggerEnter(Collider other)

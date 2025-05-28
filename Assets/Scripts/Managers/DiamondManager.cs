@@ -47,7 +47,7 @@ public class DiamondManager : MonoBehaviour
         }
 
         Debug.Log("Diamonds collected!");
-        GameStateManager.Instance.GotDiamonds();
+        GameStateManager.Instance.GotDiamonds(50);
 
        StartCoroutine(RespawnDiamonds());
     }
