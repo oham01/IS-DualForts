@@ -3444,10 +3444,10 @@ MonoBehaviour:
     cost: 100
   tower2Blueprint:
     TowerPrefab: {fileID: 1882528618866688279, guid: 17136b623c188ad40835e0b4d98b04f0, type: 3}
-    cost: 0
+    cost: 100
   tower3Blueprint:
     TowerPrefab: {fileID: 7658933235120815665, guid: 1267fc277774cf34f8be8f37e16bdefd, type: 3}
-    cost: 0
+    cost: 10
 --- !u!4 &440227445
 Transform:
   m_ObjectHideFlags: 0
@@ -7085,7 +7085,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   startingLives: 100
   currentLives: 0
-  startingDiamonds: 0
+  startingDiamonds: 10
   diamondCount: 0
   gameEnded: 0
   worldSpaceButton: {fileID: 1628202757}
@@ -7600,7 +7600,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: fc8f6b55e0d1ad04a99c6bb65c2a834a, type: 3}
+  m_Sprite: {fileID: 21300000, guid: f8705e6b997aed1488584b83bb7aac80, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -8997,7 +8997,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: f8705e6b997aed1488584b83bb7aac80, type: 3}
+  m_Sprite: {fileID: 21300000, guid: fc8f6b55e0d1ad04a99c6bb65c2a834a, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
