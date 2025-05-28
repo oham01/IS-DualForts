@@ -45,7 +45,7 @@ public class DiamondManager : MonoBehaviour
         {
            Destroy(diamond.gameObject);
         }
-        
+
         Debug.Log("Diamonds collected!");
         GameStateManager.Instance.GotDiamonds();
 
