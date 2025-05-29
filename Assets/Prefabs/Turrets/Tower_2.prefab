@@ -48,6 +48,7 @@ MonoBehaviour:
   firePoint: {fileID: 6116743091106033482}
   range: 15
   fireRate: 2
+  shootSound: {fileID: 8300000, guid: 738da83e6bd1b7e43b117fe212055a5e, type: 3}
 --- !u!1 &7901523863980484685
 GameObject:
   m_ObjectHideFlags: 0

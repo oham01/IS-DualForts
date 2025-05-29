@@ -32,6 +32,7 @@ public class GameStateManager : MonoBehaviour
         gameEnded = false;
         roundsSurvived = 0;
         UIManager.Instance.UpdateDiamondsCount(diamondCount);
+        SoundManager.Instance.PlayBackgroundMusic();
     }
 
     void Update()
@@ -55,6 +56,7 @@ public class GameStateManager : MonoBehaviour
         if(gameEnded) return;
         Debug.Log("GAME OVER");
         EndGame();
+        SoundManager.Instance.StopBackgroundMusic();
     }
 
     public void LoseLife(int amount)

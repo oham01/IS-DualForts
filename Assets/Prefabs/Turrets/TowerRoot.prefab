@@ -48,6 +48,7 @@ MonoBehaviour:
   firePoint: {fileID: 5274940371739054626}
   range: 15
   fireRate: 2
+  shootSound: {fileID: 8300000, guid: 738da83e6bd1b7e43b117fe212055a5e, type: 3}
 --- !u!1001 &7848255819759279962
 PrefabInstance:
   m_ObjectHideFlags: 0
