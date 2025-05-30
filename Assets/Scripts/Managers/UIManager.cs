@@ -10,7 +10,7 @@ public class UIManager : MonoBehaviour
     public Text diamondCountText;
     public Text livesCountText;
 
-    public GameObject gameOverUI;
+    //public GameObject gameOverUI;
     public Text roundsSurvived;
 
     public Text waveCountdownText;
@@ -47,7 +47,7 @@ public class UIManager : MonoBehaviour
     public void ShowGameOver(int count)
     {
         roundsSurvived.text = count.ToString();
-        gameOverUI.SetActive(true);
+       //gameOverUI.SetActive(true);
     }
 
 

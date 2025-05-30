@@ -17,6 +17,11 @@ public class WaveSpawner : MonoBehaviour
 
     public Wave[] waves;
 
+    void Awake()
+    {
+        enemiesAlive = 0; 
+    }
+
     // Spawn enemies every countdown 
     void Update()
     {

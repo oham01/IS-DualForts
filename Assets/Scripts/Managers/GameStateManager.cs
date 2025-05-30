@@ -18,11 +18,15 @@ public class GameStateManager : MonoBehaviour
 
     public static int roundsSurvived;
 
-    public RectTransform worldSpaceButton; 
+    public RectTransform worldSpaceButton;
+
+    public string gameScene = "GameScene";
+    public string endScene = "EndScene";
 
     void Awake()
     {
         Instance = this;
+        gameEnded = false;
     }
 
     void Start()
@@ -93,11 +97,12 @@ public class GameStateManager : MonoBehaviour
     public void EndGame()
     {
         gameEnded = true;
-        UIManager.Instance.ShowGameOver(roundsSurvived);
+        SceneManager.LoadScene(endScene);
     }
 
     public void Retry()
     {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex); // Reload the active scene
+        WaveSpawner.enemiesAlive = 0;
+        SceneManager.LoadScene(gameScene); // Reload the active scene
     }
 }
