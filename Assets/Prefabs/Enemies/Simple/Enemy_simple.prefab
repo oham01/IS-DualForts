@@ -23964,6 +23964,8 @@ GameObject:
   - component: {fileID: 6320078784537558062}
   - component: {fileID: -7713051593163084092}
   - component: {fileID: 1002669896741387481}
+  - component: {fileID: -268353809442608082}
+  - component: {fileID: 5339788561990981291}
   m_Layer: 0
   m_Name: Enemy_simple
   m_TagString: Enemy
@@ -23978,7 +23980,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2332828978059243644}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: 0, y: 1, z: 0, w: 0}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -23995,7 +23997,7 @@ Transform:
   - {fileID: -6247945034147084998}
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
 --- !u!114 &-7713051593163084092
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -24026,6 +24028,41 @@ SphereCollider:
   serializedVersion: 2
   m_Radius: 0.5
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!95 &-268353809442608082
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2332828978059243644}
+  m_Enabled: 1
+  m_Avatar: {fileID: 9000000, guid: e4c88fe2e81511d4dae9da620550ecf9, type: 3}
+  m_Controller: {fileID: 9100000, guid: be94599944fb18b4ea870787648aa418, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 1
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!111 &5339788561990981291
+Animation:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2332828978059243644}
+  m_Enabled: 0
+  serializedVersion: 3
+  m_Animation: {fileID: 2554213769740303403, guid: e4c88fe2e81511d4dae9da620550ecf9, type: 3}
+  m_Animations:
+  - {fileID: 2554213769740303403, guid: e4c88fe2e81511d4dae9da620550ecf9, type: 3}
+  m_WrapMode: 0
+  m_PlayAutomatically: 1
+  m_AnimatePhysics: 0
+  m_CullingType: 0
 --- !u!1 &2348509080355799814
 GameObject:
   m_ObjectHideFlags: 0
