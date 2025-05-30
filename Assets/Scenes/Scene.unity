@@ -2893,6 +2893,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   turretType: 3
   triggerHeight: 1
+  selectionSound: {fileID: 8300000, guid: f4e94de1c23721744a890189e6439a58, type: 3}
+  errorSound: {fileID: 8300000, guid: e0640e84005583a429c3416802de0959, type: 3}
 --- !u!114 &391605392
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3615,6 +3617,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9bb442334999fb84487442a2b692a37f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  playerNumber: 1
   q: {x: 0, y: 0, z: 0, w: 0}
   manual: 0
 --- !u!65 &483883240
@@ -4061,6 +4064,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   turretType: 0
   triggerHeight: 1
+  selectionSound: {fileID: 8300000, guid: f4e94de1c23721744a890189e6439a58, type: 3}
+  errorSound: {fileID: 8300000, guid: e0640e84005583a429c3416802de0959, type: 3}
 --- !u!1 &562342501
 GameObject:
   m_ObjectHideFlags: 0
@@ -5685,6 +5690,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9bb442334999fb84487442a2b692a37f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  playerNumber: 1
   q: {x: 0, y: 0, z: 0, w: 0}
   manual: 0
 --- !u!65 &763629981
@@ -7566,6 +7572,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   turretType: 1
   triggerHeight: 1
+  selectionSound: {fileID: 8300000, guid: f4e94de1c23721744a890189e6439a58, type: 3}
+  errorSound: {fileID: 8300000, guid: e0640e84005583a429c3416802de0959, type: 3}
 --- !u!114 &1142906313
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7745,6 +7753,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9bb442334999fb84487442a2b692a37f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  playerNumber: 1
   q: {x: 0, y: 0, z: 0, w: 0}
   manual: 0
 --- !u!65 &1151668550
@@ -8313,6 +8322,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9bb442334999fb84487442a2b692a37f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  playerNumber: 1
   q: {x: 0, y: 0, z: 0, w: 0}
   manual: 0
 --- !u!1001 &1265965227
@@ -8963,6 +8973,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   turretType: 2
   triggerHeight: 1
+  selectionSound: {fileID: 8300000, guid: f4e94de1c23721744a890189e6439a58, type: 3}
+  errorSound: {fileID: 0}
 --- !u!114 &1407021950
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9583,6 +9595,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9bb442334999fb84487442a2b692a37f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  playerNumber: 1
   q: {x: 0, y: 0, z: 0, w: 0}
   manual: 0
 --- !u!114 &1440896353
@@ -10260,6 +10273,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9bb442334999fb84487442a2b692a37f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  playerNumber: 2
   q: {x: 0, y: 0, z: 0, w: 0}
   manual: 0
 --- !u!54 &1471923281
@@ -10847,6 +10861,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9bb442334999fb84487442a2b692a37f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  playerNumber: 1
   q: {x: 0, y: 0, z: 0, w: 0}
   manual: 0
 --- !u!65 &1554760528
@@ -13767,6 +13782,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9bb442334999fb84487442a2b692a37f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  playerNumber: 1
   q: {x: 0, y: 0, z: 0, w: 0}
   manual: 0
 --- !u!1 &1866559963
