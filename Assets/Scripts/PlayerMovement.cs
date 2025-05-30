@@ -5,6 +5,9 @@ using UnityEngine.SceneManagement;
 
 public class PlayerMovement : MonoBehaviour
 {
+    // Número del jugador (configurar en el inspector: 1 o 2)
+    public int playerNumber = 1;
+    
     // Start is called before the first frame update
     public Quaternion q;
     public bool manual;
