@@ -1602,7 +1602,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &220600113
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2802,8 +2802,8 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 250, y: 250, z: 100}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Size: {x: 250, y: 250, z: 48.405907}
+  m_Center: {x: 0, y: -6.046805e-13, z: 25.797056}
 --- !u!114 &391605391
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3970,8 +3970,8 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 250, y: 250, z: 100}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Size: {x: 250, y: 250, z: 48.405914}
+  m_Center: {x: 0, y: -6.0468113e-13, z: 25.797071}
 --- !u!114 &539134395
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4532,7 +4532,7 @@ MonoBehaviour:
   enableTracking: 0
   numberOfPlayers: 2
   numberOfBaseStations: 4
-  enableRotation: 1
+  enableRotation: 0
   enableYAxis: 1
   virtualWorldSpace: {x: 100, y: 1, z: 100}
   players:
@@ -7475,8 +7475,8 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 250, y: 250, z: 100}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Size: {x: 250, y: 250, z: 48.4059}
+  m_Center: {x: 0, y: -6.046806e-13, z: 25.79706}
 --- !u!114 &1142906312
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8872,8 +8872,8 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 250, y: 250, z: 100}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Size: {x: 250, y: 250, z: 48.4059}
+  m_Center: {x: 0, y: -6.046806e-13, z: 25.79706}
 --- !u!114 &1407021949
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -11847,8 +11847,8 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 250, y: 135, z: 15}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Size: {x: 250, y: 135, z: 18.723293}
+  m_Center: {x: 0, y: -1.1791168e-13, z: 11.435807}
 --- !u!114 &1628202762
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -12228,8 +12228,8 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 250, y: 135, z: 10}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Size: {x: 250, y: 135, z: 17.446585}
+  m_Center: {x: 0, y: -1.2395868e-13, z: 11.7017565}
 --- !u!1001 &1667850155
 PrefabInstance:
   m_ObjectHideFlags: 0
