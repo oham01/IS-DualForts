@@ -25,7 +25,16 @@ public class Enemy : MonoBehaviour
     void Update()
     {
         Vector3 direction = target.position - transform.position ; // Direction to move in to get closer to target
-        transform.Translate(direction.normalized * speed * Time.deltaTime);
+        
+        // Move in world space instead of local space
+        transform.position += direction.normalized * speed * Time.deltaTime;
+
+        // Rotate the enemy to face the direction of movement
+        if (direction != Vector3.zero)
+        {
+            Quaternion lookRotation = Quaternion.LookRotation(direction);
+            transform.rotation = Quaternion.Slerp(transform.rotation, lookRotation, Time.deltaTime * speed);
+        }
 
         // Change waypoint index if enemy reached the current target
         if(Vector3.Distance(transform.position,target.position) <= 0.2f)
