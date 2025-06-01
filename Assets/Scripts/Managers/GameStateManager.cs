@@ -22,6 +22,7 @@ public class GameStateManager : MonoBehaviour
 
     public string gameScene = "GameScene";
     public string endScene = "EndScene";
+    public string winScene = "WinScene";
 
     void Awake()
     {
@@ -104,5 +105,11 @@ public class GameStateManager : MonoBehaviour
     {
         WaveSpawner.enemiesAlive = 0;
         SceneManager.LoadScene(gameScene); // Reload the active scene
+    }
+
+    public void WinGame()
+    {
+        gameEnded = true;
+        SceneManager.LoadScene(winScene);
     }
 }

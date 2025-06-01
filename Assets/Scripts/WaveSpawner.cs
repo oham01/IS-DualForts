@@ -38,6 +38,13 @@ public class WaveSpawner : MonoBehaviour
             return;
         }
 
+        if (waveNumber == waves.Length)
+        {
+            Debug.Log("GAME FINISHED");
+            this.enabled = false;
+            GameStateManager.Instance.WinGame();
+        }
+
         countdown = countdown - Time.deltaTime;
         UIManager.Instance.UpdateCountdown(countdown);
     }
@@ -55,11 +62,6 @@ public class WaveSpawner : MonoBehaviour
         waveNumber++;
         UIManager.Instance.UpdateWaveNumber(waveNumber);
 
-        if(waveNumber == waves.Length)
-        {
-            Debug.Log("GAME FINISHED");
-            this.enabled = false;
-        }
     }
 
     void SpawnEnemy(GameObject enemy)
