@@ -3529,6 +3529,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 50cf1cc21adef2049876c22493a3de89, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  upgradeCost: 25
   tower1Blueprint:
     TowerPrefab: {fileID: 2307196585089326411, guid: 92e451003ad630843978e3c5b532a3f7, type: 3}
     cost: 100
@@ -3538,6 +3539,7 @@ MonoBehaviour:
   tower3Blueprint:
     TowerPrefab: {fileID: 7658933235120815665, guid: 1267fc277774cf34f8be8f37e16bdefd, type: 3}
     cost: 10
+  selectionSound: {fileID: 0}
 --- !u!4 &440227445
 Transform:
   m_ObjectHideFlags: 0
@@ -7294,9 +7296,9 @@ MonoBehaviour:
   startingDiamonds: 10
   diamondCount: 0
   gameEnded: 0
-  worldSpaceButton: {fileID: 1628202757}
   gameScene: GameScene
   endScene: EndScene
+  winScene: WinScene
 --- !u!1001 &1070124909
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -10418,7 +10420,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1471923275}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -42.2, y: 0, z: -10.92}
+  m_LocalPosition: {x: -32.6, y: 0, z: -10.92}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1848563552}
@@ -14839,6 +14841,7 @@ MonoBehaviour:
   roundsSurvived: {fileID: 1933904181}
   waveCountdownText: {fileID: 121394299}
   waveNumberText: {fileID: 404154319}
+  upgradeCost: {fileID: 0}
 --- !u!1 &1966654673
 GameObject:
   m_ObjectHideFlags: 0
