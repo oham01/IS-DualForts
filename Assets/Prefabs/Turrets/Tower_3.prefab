@@ -47,8 +47,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bulletPrefab: {fileID: 5142520702175152734, guid: 3e65dcf8ed4784443ba0e580d809edfd, type: 3}
   firePoint: {fileID: 4475916159886487519}
-  range: 15
-  fireRate: 2
+  range: 25
+  fireRate: 1
   shootSound: {fileID: 8300000, guid: 738da83e6bd1b7e43b117fe212055a5e, type: 3}
 --- !u!82 &-8484956500458033737
 AudioSource:
