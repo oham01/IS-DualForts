@@ -24010,10 +24010,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 983d45775fb906b4bbc1ea927d7acf8a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 15
+  speed: 10
   health: 100
-  diamondValue: 10
-  damage: 10
+  diamondValue: 15
+  damage: 5
   deathEffect: {fileID: 2775357357664373769, guid: 10a1fb6a6363b1a4a94cff2ed2a7d08c, type: 3}
 --- !u!135 &1002669896741387481
 SphereCollider:

@@ -54,14 +54,34 @@ public class WaveSpawner : MonoBehaviour
         GameStateManager.Instance.IncreaseRound();
         Wave wave = waves[waveNumber];
 
-        for(int i = 0; i < wave.count; i++)
+        // Flatten all enemies into one list
+        List<GameObject> spawnQueue = new List<GameObject>();
+        foreach (WaveEntry entry in wave.enemies)
         {
-            SpawnEnemy(wave.enemy);
-            yield return new WaitForSeconds(1.0f/wave.rate);
+            for (int i = 0; i < entry.count; i++)
+            {
+                spawnQueue.Add(entry.enemy);
+            }
         }
+
+        // Shuffle the list randomly
+        for (int i = 0; i < spawnQueue.Count; i++)
+        {
+            int randomIndex = Random.Range(i, spawnQueue.Count);
+            GameObject temp = spawnQueue[i];
+            spawnQueue[i] = spawnQueue[randomIndex];
+            spawnQueue[randomIndex] = temp;
+        }
+
+        // Spawn enemies in shuffled order
+        foreach (GameObject enemy in spawnQueue)
+        {
+            SpawnEnemy(enemy);
+            yield return new WaitForSeconds(1.0f / wave.rate);
+        }
+
         waveNumber++;
         UIManager.Instance.UpdateWaveNumber(waveNumber);
-
     }
 
     void SpawnEnemy(GameObject enemy)

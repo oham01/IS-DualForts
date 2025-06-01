@@ -46,8 +46,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bulletPrefab: {fileID: 6692086571303206262, guid: 6cbe62be7b53b7e4da1f1cab1393774b, type: 3}
   firePoint: {fileID: 5274940371739054626}
-  range: 15
-  fireRate: 2.5
+  range: 30
+  fireRate: 3
   shootSound: {fileID: 8300000, guid: 738da83e6bd1b7e43b117fe212055a5e, type: 3}
 --- !u!1001 &7848255819759279962
 PrefabInstance:
