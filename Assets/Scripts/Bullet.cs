@@ -37,7 +37,7 @@ public class Bullet : MonoBehaviour
         }
 
         transform.Translate(direction.normalized * distanceThisFrame, Space.World);
-
+        transform.LookAt(target);
     }
 
     public void setTarget(Transform new_target)
@@ -75,6 +75,17 @@ public class Bullet : MonoBehaviour
 
     void Explode()
     {
-        //
+        Debug.Log("EXPLODING");
+        // Shoot out a sphere and check all colliders hit by the sphere
+        Collider[] colliders = Physics.OverlapSphere(transform.position, explosionRadius);
+        foreach (Collider collider in colliders)
+        {
+            // Only take the enemy tag colliders into account
+            if (collider.tag == "Enemy")
+            {
+                Damage(collider.transform);
+            }
+        }
     }
+
 }
