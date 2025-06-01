@@ -1753,7 +1753,7 @@ MonoBehaviour:
   spawnPosition: {fileID: 618347174}
   timeBetweenWaves: 5
   timeBetweenSpawns: 0.25
-  countdown: 2
+  countdown: 10
   waves:
   - enemy: {fileID: 2332828978059243644, guid: e62fed41bf180524aafc428390e83e50, type: 3}
     count: 3
@@ -3695,10 +3695,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   tower1Blueprint:
     TowerPrefab: {fileID: 2307196585089326411, guid: 92e451003ad630843978e3c5b532a3f7, type: 3}
-    cost: 100
+    cost: 20
   tower2Blueprint:
     TowerPrefab: {fileID: 1882528618866688279, guid: 17136b623c188ad40835e0b4d98b04f0, type: 3}
-    cost: 100
+    cost: 20
   tower3Blueprint:
     TowerPrefab: {fileID: 7658933235120815665, guid: 1267fc277774cf34f8be8f37e16bdefd, type: 3}
     cost: 10
@@ -7554,10 +7554,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   startingLives: 100
   currentLives: 0
-  startingDiamonds: 10
+  startingDiamonds: 20
   diamondCount: 0
   gameEnded: 0
-  worldSpaceButton: {fileID: 1628202757}
   gameScene: GameScene
   endScene: EndScene
   winScene: WinScene

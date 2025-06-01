@@ -18,8 +18,6 @@ public class GameStateManager : MonoBehaviour
 
     public static int roundsSurvived;
 
-    public RectTransform worldSpaceButton;
-
     public string gameScene = "GameScene";
     public string endScene = "EndScene";
     public string winScene = "WinScene";
