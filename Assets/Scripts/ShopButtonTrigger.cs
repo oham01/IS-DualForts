@@ -34,9 +34,11 @@ public class ShopButtonTrigger : MonoBehaviour
         player1Indicator.transform.localRotation = Quaternion.Euler(90, 0, 0.1f);
         player1Indicator.transform.localScale = new Vector3(250f, 0.5f, 250f);
         
+        // Crear material para Jugador 1
         Material mat1 = new Material(Shader.Find("Unlit/Color"));
         mat1.color = new Color(1.0f, 0.733f, 0.345f); // FFBB58 - Naranja amarillento
-        player1Indicator.GetComponent<Renderer>().material = mat1;
+        player1Indicator.GetComponent<Renderer>().sharedMaterial = mat1;
+        Debug.Log($"[{gameObject.name}] Material NARANJA aplicado para P1");
         
         Destroy(player1Indicator.GetComponent<Collider>());
         player1Indicator.SetActive(false);
@@ -48,9 +50,11 @@ public class ShopButtonTrigger : MonoBehaviour
         player2Indicator.transform.localPosition = new Vector3(1.5f, 2f, 10f);
         player2Indicator.transform.localScale = new Vector3(250f, 0.5f, 250f);
         
+        // Crear material para Jugador 2
         Material mat2 = new Material(Shader.Find("Unlit/Color"));
         mat2.color = new Color(0.337f, 0.894f, 1.0f); // 56E4FF - Azul cian claro
-        player2Indicator.GetComponent<Renderer>().material = mat2;
+        player2Indicator.GetComponent<Renderer>().sharedMaterial = mat2;
+        Debug.Log($"[{gameObject.name}] Material AZUL CIAN aplicado para P2");
         
         Destroy(player2Indicator.GetComponent<Collider>());
         player2Indicator.SetActive(false);
