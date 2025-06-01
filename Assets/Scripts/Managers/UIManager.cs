@@ -16,6 +16,8 @@ public class UIManager : MonoBehaviour
     public Text waveCountdownText;
     public Text waveNumberText;
 
+    public Text upgradeCost;
+
     void Awake()
     {
         Instance = this;
@@ -50,5 +52,9 @@ public class UIManager : MonoBehaviour
        //gameOverUI.SetActive(true);
     }
 
+    public void UpdateUpgradeCost(int cost)
+    {
+        upgradeCost.text = cost.ToString();
+    }
 
 }

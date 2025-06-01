@@ -36,6 +36,7 @@ public class GameStateManager : MonoBehaviour
         roundsSurvived = 0;
         UIManager.Instance.UpdateDiamondsCount(diamondCount);
         SoundManager.Instance.PlayBackgroundMusic();
+
     }
 
     void Update()

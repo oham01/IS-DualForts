@@ -26,10 +26,6 @@ public class TowerSpawner : MonoBehaviour
 
     void Update()
     {
-/*        if (Input.GetKeyDown(KeyCode.P) && currentBuildZone != null && !currentBuildZone.isUsed)
-        {
-            SpawnTowerAtZone();
-        }*/
 
         if (currentBuildZone != null && !currentBuildZone.isUsed && towerToBuild != null)
         {
@@ -66,7 +62,7 @@ public class TowerSpawner : MonoBehaviour
 
         // Buy the cost
         GameStateManager.Instance.GotDiamonds(-towerToBuild.cost);
-       // GameStateManager.Instance.diamondCount -= towerToBuild.cost;
+        // GameStateManager.Instance.diamondCount -= towerToBuild.cost;
         //UIManager.Instance.UpdateDiamondsCount(GameStateManager.Instance.diamondCount);
 
         Instantiate(towerToBuild.TowerPrefab, currentBuildZone.transform.position, towerToBuild.TowerPrefab.transform.rotation);

@@ -6,14 +6,24 @@ public class Shop : MonoBehaviour
 {
     public static Shop Instance;
 
+    public int upgradeCost = 25;
     public TowerBlueprint tower1Blueprint;
     public TowerBlueprint tower2Blueprint;
     public TowerBlueprint tower3Blueprint;
 
+    public AudioClip selectionSound;
+    private AudioSource audioSource;
+
     void Awake()
     {
         Instance = this;
+        audioSource = gameObject.AddComponent<AudioSource>();
+        audioSource.playOnAwake = false;
+    }
 
+    void Start()
+    {
+        UIManager.Instance.UpdateUpgradeCost(upgradeCost);
     }
 
     public void SelectTurret(ShopButtonTrigger.TurretType type,TowerSpawner spawner)
@@ -27,9 +37,46 @@ public class Shop : MonoBehaviour
             spawner.DeselectTower();
             return;
         }
-        
-        // Get the blueprint for the selected turret
-        switch (type)
+
+        // Handle Upgrade - Apply a boost to all turrets
+        if (type == ShopButtonTrigger.TurretType.Upgrade)
+        {
+            // Check if the player has enough diamonds to apply the upgrade
+            if (GameStateManager.Instance.diamondCount >= upgradeCost)
+            {
+                // Apply the boost to all turrets
+                ApplyUpgradeToAllTurrets();
+
+                // Deduct diamonds
+                GameStateManager.Instance.diamondCount -= upgradeCost;
+
+                Debug.Log("Upgrade applied to all turrets!");
+
+                // Play selection sound
+                if (selectionSound != null && audioSource != null)
+                {
+                    audioSource.PlayOneShot(selectionSound);
+                }
+            }
+            else
+            {
+                // Not enough money for upgrade, play error sound
+                Debug.Log("Not enough diamonds for upgrade!");
+                ShopButtonTrigger[] buttons = FindObjectsOfType<ShopButtonTrigger>();
+                foreach (ShopButtonTrigger button in buttons)
+                {
+                    if (button.turretType == ShopButtonTrigger.TurretType.Upgrade)
+                    {
+                        button.PlayErrorSound();
+                        break;
+                    }
+                }
+
+            }
+        }
+
+            // Get the blueprint for the selected turret
+            switch (type)
         {
             case ShopButtonTrigger.TurretType.Turret1:
                 selectedBlueprint = tower1Blueprint;
@@ -74,5 +121,13 @@ public class Shop : MonoBehaviour
         }
     }
 
+    public void ApplyUpgradeToAllTurrets()
+    {
+        // Boost the static multiplier
+        Tower.globalFireRateMultiplier *= 1.25f;
+        upgradeCost = (int)(upgradeCost * 1.25f);
+        UIManager.Instance.UpdateUpgradeCost(upgradeCost);
+        Debug.Log("Global turret fire rate upgraded!");
+    }
 
 }

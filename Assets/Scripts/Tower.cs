@@ -18,6 +18,9 @@ public class Tower : MonoBehaviour
     public AudioClip shootSound;
     private AudioSource audioSource;
 
+    //public float upgrade_amount = 2.0f;
+    public static float globalFireRateMultiplier = 1f;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -36,7 +39,7 @@ public class Tower : MonoBehaviour
         if(fireCountdown <= 0.0f)
         {
             Shoot();
-            fireCountdown = 1.0f / fireRate;
+            fireCountdown = 1.0f / (fireRate * globalFireRateMultiplier);
         }
 
         fireCountdown -= Time.deltaTime;

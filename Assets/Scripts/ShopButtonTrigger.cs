@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class ShopButtonTrigger : MonoBehaviour
 {
-    public enum TurretType { Turret1, Turret2, Turret3, Unselect }
+    public enum TurretType { Turret1, Turret2, Turret3, Unselect, Upgrade }
     public TurretType turretType;
 
     public float triggerHeight = 1.0f;
