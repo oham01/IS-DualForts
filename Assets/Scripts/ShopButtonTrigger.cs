@@ -9,7 +9,6 @@ public class ShopButtonTrigger : MonoBehaviour
 
     public float triggerHeight = 1.0f;
     
-    // Arrastra aquí el sonido desde Unity Inspector
     public AudioClip selectionSound;
     public AudioClip errorSound; // Sonido de error cuando no hay suficiente dinero
     
@@ -38,7 +37,6 @@ public class ShopButtonTrigger : MonoBehaviour
         Material mat1 = new Material(Shader.Find("Unlit/Color"));
         mat1.color = new Color(1.0f, 0.733f, 0.345f); // FFBB58 - Naranja amarillento
         player1Indicator.GetComponent<Renderer>().sharedMaterial = mat1;
-        Debug.Log($"[{gameObject.name}] Material NARANJA aplicado para P1");
         
         Destroy(player1Indicator.GetComponent<Collider>());
         player1Indicator.SetActive(false);
@@ -54,18 +52,10 @@ public class ShopButtonTrigger : MonoBehaviour
         Material mat2 = new Material(Shader.Find("Unlit/Color"));
         mat2.color = new Color(0.337f, 0.894f, 1.0f); // 56E4FF - Azul cian claro
         player2Indicator.GetComponent<Renderer>().sharedMaterial = mat2;
-        Debug.Log($"[{gameObject.name}] Material AZUL CIAN aplicado para P2");
         
         Destroy(player2Indicator.GetComponent<Collider>());
         player2Indicator.SetActive(false);
         
-        Debug.Log($"Indicadores creados para {name}");
-    }
-
-    public void ShowSelection(bool show)
-    {
-        // Método obsoleto - usar el que tiene playerNumber
-        Debug.LogWarning("Usando método ShowSelection sin playerNumber - esto no debería pasar");
     }
 
     public void ShowSelection(bool show, int playerNumber)
@@ -73,7 +63,6 @@ public class ShopButtonTrigger : MonoBehaviour
         if (playerNumber == 1 && player1Indicator != null)
         {
             player1Indicator.SetActive(show);
-            Debug.Log($"JUGADOR 1 - Indicador NARANJA {(show ? "activado" : "desactivado")} en {name}");
             
             // Reproducir sonido solo cuando se activa
             if (show && selectionSound != null && audioSource != null)
@@ -84,7 +73,6 @@ public class ShopButtonTrigger : MonoBehaviour
         else if (playerNumber == 2 && player2Indicator != null)
         {
             player2Indicator.SetActive(show);
-            Debug.Log($"JUGADOR 2 - Indicador ROJO {(show ? "activado" : "desactivado")} en {name}");
             
             // Reproducir sonido solo cuando se activa
             if (show && selectionSound != null && audioSource != null)
@@ -103,7 +91,6 @@ public class ShopButtonTrigger : MonoBehaviour
         if (errorSound != null && audioSource != null)
         {
             audioSource.PlayOneShot(errorSound);
-            Debug.Log($"Sonido de ERROR reproducido en {name} - No hay suficiente dinero");
         }
     }
 

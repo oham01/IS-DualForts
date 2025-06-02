@@ -5,34 +5,34 @@ using UnityEngine;
 
 public class DiamondCollector : MonoBehaviour
 {
-    private bool isOccupied = false;
-    private GameObject occupyingPlayer = null;
+    private bool isOccupied = false; // Determine if player is standing ontop of diamond
+    private GameObject occupyingPlayer = null; // Player object instance on the diamond
   
+    // Getters and setters
     public bool IsOccupied
     {
         get { return isOccupied; }
         private set { isOccupied = value; }
     }
 
+    // Occupy the diamond on box collider trigger with the player if it's not occupied
     private void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("Player") && !isOccupied)
         {
             isOccupied = true;
             occupyingPlayer = other.gameObject;
-            Debug.Log($"{gameObject.name} occupied by {occupyingPlayer.name}");
             DiamondManager.Instance.CheckForCollection();
         }
     }
 
-
+    // Unoccupy the diamond on exit of the box collider
     private void OnTriggerExit(Collider other)
     {
         if (other.gameObject == occupyingPlayer)
         {
             isOccupied = false;
             occupyingPlayer = null;
-            Debug.Log($"{gameObject.name} unoccupied by {other.gameObject.name}");
             DiamondManager.Instance.CheckForCollection();
         }
     }

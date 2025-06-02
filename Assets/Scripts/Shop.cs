@@ -26,6 +26,7 @@ public class Shop : MonoBehaviour
         UIManager.Instance.UpdateUpgradeCost(upgradeCost);
     }
 
+    // Select the turret blueprint (or unselect/upgrade) when the player enters the box collider
     public void SelectTurret(ShopButtonTrigger.TurretType type,TowerSpawner spawner)
     {
         TowerBlueprint selectedBlueprint = null;
@@ -38,7 +39,7 @@ public class Shop : MonoBehaviour
             return;
         }
 
-        // Handle Upgrade - Apply a boost to all turrets
+        // Handle Upgrade, Apply a boost to all turrets
         if (type == ShopButtonTrigger.TurretType.Upgrade)
         {
             // Check if the player has enough diamonds to apply the upgrade
@@ -50,8 +51,6 @@ public class Shop : MonoBehaviour
                 // Deduct diamonds
                 GameStateManager.Instance.diamondCount -= upgradeCost;
 
-                Debug.Log("Upgrade applied to all turrets!");
-
                 // Play selection sound
                 if (selectionSound != null && audioSource != null)
                 {
@@ -61,7 +60,6 @@ public class Shop : MonoBehaviour
             else
             {
                 // Not enough money for upgrade, play error sound
-                Debug.Log("Not enough diamonds for upgrade!");
                 ShopButtonTrigger[] buttons = FindObjectsOfType<ShopButtonTrigger>();
                 foreach (ShopButtonTrigger button in buttons)
                 {
@@ -77,7 +75,7 @@ public class Shop : MonoBehaviour
 
             // Get the blueprint for the selected turret
             switch (type)
-        {
+            {
             case ShopButtonTrigger.TurretType.Turret1:
                 selectedBlueprint = tower1Blueprint;
                 break;
@@ -87,21 +85,18 @@ public class Shop : MonoBehaviour
             case ShopButtonTrigger.TurretType.Turret3:
                 selectedBlueprint = tower3Blueprint;
                 break;
-        }
+            }
 
         if (selectedBlueprint != null)
         {
             // Verificar si hay dinero suficiente ANTES de seleccionar
             if (GameStateManager.Instance.diamondCount >= selectedBlueprint.cost)
             {
-                // Suficiente dinero - permitir selección
+                // Suficiente dinero, permitir selección
                 spawner.SelectTowerToBuild(selectedBlueprint, type);
-                Debug.Log($"{type} selected - Ready to build!");
             }
             else
             {
-                // No hay dinero suficiente - reproducir sonido de error y NO seleccionar
-                Debug.Log($"Cannot select {type} - Not enough diamonds!");
                 
                 // Encontrar el botón que se intentó presionar y reproducir sonido de error
                 ShopButtonTrigger[] buttons = FindObjectsOfType<ShopButtonTrigger>();
@@ -121,13 +116,12 @@ public class Shop : MonoBehaviour
         }
     }
 
+    // Change the global fire rate modifier to boost all turrets
     public void ApplyUpgradeToAllTurrets()
-    {
-        // Boost the static multiplier
+    { 
         Tower.globalFireRateMultiplier *= 1.25f;
         upgradeCost = (int)(upgradeCost * 1.25f);
         UIManager.Instance.UpdateUpgradeCost(upgradeCost);
-        Debug.Log("Global turret fire rate upgraded!");
     }
 
 }
