@@ -12,7 +12,6 @@ public class SoundManager : MonoBehaviour
     private Vector3 cameraPosition;
     private AudioSource musicSource;
 
-
     void Awake()
     {
         Instance = this;
@@ -48,8 +47,4 @@ public class SoundManager : MonoBehaviour
             musicSource.Stop();
     }
 
-    void Update()
-    {
-
-    }
 }

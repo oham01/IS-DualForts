@@ -28,6 +28,7 @@ public class GameStateManager : MonoBehaviour
         gameEnded = false;
     }
 
+    // Initialize variables upon new game state
     void Start()
     {
         diamondCount = startingDiamonds;
@@ -48,6 +49,7 @@ public class GameStateManager : MonoBehaviour
 
     }
 
+    // Increment diamonds
     public void GotDiamonds(int value)
     {
         diamondCount+= value;
@@ -55,6 +57,7 @@ public class GameStateManager : MonoBehaviour
         SoundManager.Instance.PlayDiamondCollectSound();
     }
 
+    // Lose game
     private void GameOver()
     {
         if(gameEnded) return;
@@ -63,6 +66,7 @@ public class GameStateManager : MonoBehaviour
         SoundManager.Instance.StopBackgroundMusic();
     }
 
+    // Take damage
     public void LoseLife(int amount)
     {
         currentLives -= amount;
@@ -75,13 +79,13 @@ public class GameStateManager : MonoBehaviour
             UIManager.Instance.UpdateLivesCount(currentLives);
         }
         
-
         if(currentLives < 0)
         {
             GameOver();
         }
     }
 
+    // Gain diamonds from enemies
     public void KilledEnemy(int value)
     {
         diamondCount += value;
@@ -93,7 +97,7 @@ public class GameStateManager : MonoBehaviour
         roundsSurvived++;
     }
 
-
+    // SCENE MANAGEMENT
     public void EndGame()
     {
         gameEnded = true;

@@ -119,7 +119,7 @@ public class Shop : MonoBehaviour
     // Change the global fire rate modifier to boost all turrets
     public void ApplyUpgradeToAllTurrets()
     { 
-        Tower.globalFireRateMultiplier *= 1.25f;
+        Tower.globalFireRateMultiplier *= 1.125f;
         upgradeCost = (int)(upgradeCost * 1.25f);
         UIManager.Instance.UpdateUpgradeCost(upgradeCost);
     }

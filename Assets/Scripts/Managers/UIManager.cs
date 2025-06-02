@@ -49,7 +49,6 @@ public class UIManager : MonoBehaviour
     public void ShowGameOver(int count)
     {
         roundsSurvived.text = count.ToString();
-       //gameOverUI.SetActive(true);
     }
 
     public void UpdateUpgradeCost(int cost)
