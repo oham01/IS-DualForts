@@ -10,6 +10,8 @@ public class Enemy : MonoBehaviour
     public int diamondValue = 10;
     public int damage = 60;
 
+    private AudioSource audioSource;
+
     private Transform target; // The next waypoint to walk to
     private int waypointIndex = 0; // The index in the waypoint array to target
 
@@ -18,6 +20,9 @@ public class Enemy : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        audioSource = GetComponent<AudioSource>();
+        audioSource.Play();
+
         target = Waypoints.waypoints[waypointIndex];
     }
 
