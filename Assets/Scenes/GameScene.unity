@@ -1922,6 +1922,8 @@ MonoBehaviour:
       count: 0
     - enemy: {fileID: 872468675380951015, guid: f5a35bb32aed8d1429f59df16e708698, type: 3}
       count: 0
+    - enemy: {fileID: 4436146854726517230, guid: e887ab29e1207024c8dc770fb366f447, type: 3}
+      count: 1
     rate: 3
   - enemies:
     - enemy: {fileID: 2332828978059243644, guid: e62fed41bf180524aafc428390e83e50, type: 3}
