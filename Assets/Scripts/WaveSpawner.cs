@@ -5,7 +5,6 @@ using UnityEngine.UI;
 
 public class WaveSpawner : MonoBehaviour
 {
-    //public GameObject enemyPrefab;
     public Transform spawnPosition;
 
     public float timeBetweenWaves = 5.0f;
@@ -31,6 +30,7 @@ public class WaveSpawner : MonoBehaviour
             return;
         }
 
+        // Start spawning
         if(countdown <= 0)
         {
             StartCoroutine(SpawnWave());
@@ -38,6 +38,7 @@ public class WaveSpawner : MonoBehaviour
             return;
         }
 
+        // Win game condition
         if (waveNumber == waves.Length)
         {
             Debug.Log("GAME FINISHED");
@@ -49,6 +50,7 @@ public class WaveSpawner : MonoBehaviour
         UIManager.Instance.UpdateCountdown(countdown);
     }
 
+    // Spawn enemy entries in random order from the wave array
     private IEnumerator SpawnWave()
     {
         // Increment wave number

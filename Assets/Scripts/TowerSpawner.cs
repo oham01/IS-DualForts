@@ -4,7 +4,7 @@ public class TowerSpawner : MonoBehaviour
 {
     private BuildZone currentBuildZone = null;
 
-    public TowerBlueprint towerToBuild = null;
+    public TowerBlueprint towerToBuild = null; 
     
     public float spawnHeight = 1.0f;
     
@@ -18,15 +18,11 @@ public class TowerSpawner : MonoBehaviour
     {
         // Obtener el componente PlayerMovement
         playerMovement = GetComponent<PlayerMovement>();
-        if (playerMovement == null)
-        {
-            Debug.LogError("TowerSpawner necesita un componente PlayerMovement!");
-        }
     }
 
+    // Check if conditions met to spawn tower at a buildzone, if tower is selected and height is low enough
     void Update()
     {
-
         if (currentBuildZone != null && !currentBuildZone.isUsed && towerToBuild != null)
         {
             float playerY = transform.position.y;
@@ -49,28 +45,26 @@ public class TowerSpawner : MonoBehaviour
     {
         if (towerToBuild == null || towerToBuild.TowerPrefab == null)
         {
-            Debug.LogWarning("No tower blueprint selected!");
+            Debug.Log("No tower blueprint selected!");
             return;
         }
 
-        // Check if player can afford the tower ONLY when placing
+        // Check if player can afford the tower when placing
         if (GameStateManager.Instance.diamondCount < towerToBuild.cost)
         {
             Debug.LogWarning("Not enough diamonds to place tower - but selection stays!");
             return; // Don't place but keep selection
         }
 
-        // Buy the cost
+        // Deduct the cost
         GameStateManager.Instance.GotDiamonds(-towerToBuild.cost);
-        // GameStateManager.Instance.diamondCount -= towerToBuild.cost;
-        //UIManager.Instance.UpdateDiamondsCount(GameStateManager.Instance.diamondCount);
 
         Instantiate(towerToBuild.TowerPrefab, currentBuildZone.transform.position, towerToBuild.TowerPrefab.transform.rotation);
         currentBuildZone.isUsed = true; // Marcar la zona como usada
-        Debug.Log("Torre colocada en zona: " + currentBuildZone.name);
         DeselectTower();
     }
 
+    // On boxcollider enter, set the current buildzone location
     void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("BuildZone"))
@@ -79,6 +73,7 @@ public class TowerSpawner : MonoBehaviour
         }
     }
 
+    // Unselect the buildzone location when exiting
     void OnTriggerExit(Collider other)
     {
         if (other.CompareTag("BuildZone"))
@@ -107,8 +102,6 @@ public class TowerSpawner : MonoBehaviour
         }
         
         towerToBuild = tower;
-        
-        Debug.Log($"Seleccionando torre para JUGADOR {currentPlayerNumber}");
         
         // Mostrar nueva selección con color del jugador
         ShopButtonTrigger[] buttons = FindObjectsOfType<ShopButtonTrigger>();

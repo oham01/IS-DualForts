@@ -4,11 +4,11 @@ using UnityEngine;
 
 public class Tower : MonoBehaviour
 {
-    private Transform target;
+    private Transform target; // Enemy to target
     private string enemyTag = "Enemy";
 
     public GameObject bulletPrefab;
-    public Transform firePoint;
+    public Transform firePoint; // Where the bullet comes out from 
 
     // Tower stats
     public float range = 15.0f;
@@ -19,12 +19,11 @@ public class Tower : MonoBehaviour
     public AudioClip shootSound;
     private AudioSource audioSource;
 
-    
-
     // Start is called before the first frame update
     void Start()
     {
-        InvokeRepeating("UpdateTarget", 0.0f, 0.5f);
+        // Repeatedly search for the closest target every 0.5 seconds
+        InvokeRepeating("UpdateTarget", 0.0f, 0.5f); 
         audioSource = GetComponent<AudioSource>();
     }
 
@@ -71,6 +70,7 @@ public class Tower : MonoBehaviour
         }
     }
 
+    // Shoot current target, instantiating a new bullet
     void Shoot()
     {
         GameObject new_bullet = Instantiate(bulletPrefab, firePoint.position, firePoint.rotation);
@@ -85,13 +85,6 @@ public class Tower : MonoBehaviour
         {
             audioSource.PlayOneShot(shootSound);
         }
-
-        Debug.Log("SHOOT");
     }
 
-    void OnDrawGizmosSelected()
-    {
-        Gizmos.color = Color.red;
-        Gizmos.DrawWireSphere(transform.position, range);
-    }
 }

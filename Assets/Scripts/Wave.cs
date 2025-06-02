@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+// Each wave array contains entries constitue the enemy type, and count for this wave
 [System.Serializable]
 public class WaveEntry
 {
