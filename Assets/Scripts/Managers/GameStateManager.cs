@@ -70,7 +70,7 @@ public class GameStateManager : MonoBehaviour
     public void LoseLife(int amount)
     {
         currentLives -= amount;
-        if(currentLives < 0)
+        if(currentLives <= 0)
         {
             UIManager.Instance.UpdateLivesCount(0);
         }
@@ -79,7 +79,7 @@ public class GameStateManager : MonoBehaviour
             UIManager.Instance.UpdateLivesCount(currentLives);
         }
         
-        if(currentLives < 0)
+        if(currentLives <= 0)
         {
             GameOver();
         }
