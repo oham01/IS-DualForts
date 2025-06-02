@@ -555,7 +555,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 8
   health: 750
-  diamondValue: 35
+  diamondValue: 15
   damage: 15
   deathEffect: {fileID: 2775357357664373769, guid: 10a1fb6a6363b1a4a94cff2ed2a7d08c, type: 3}
 --- !u!82 &-5395662938256794566
