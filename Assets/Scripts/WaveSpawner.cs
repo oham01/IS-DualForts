@@ -51,8 +51,12 @@ public class WaveSpawner : MonoBehaviour
 
     private IEnumerator SpawnWave()
     {
+        // Increment wave number
         GameStateManager.Instance.IncreaseRound();
-        Wave wave = waves[waveNumber];
+        waveNumber++;
+        UIManager.Instance.UpdateWaveNumber(waveNumber);
+
+        Wave wave = waves[waveNumber - 1];
 
         // Flatten all enemies into one list
         List<GameObject> spawnQueue = new List<GameObject>();
@@ -79,9 +83,6 @@ public class WaveSpawner : MonoBehaviour
             SpawnEnemy(enemy);
             yield return new WaitForSeconds(1.0f / wave.rate);
         }
-
-        waveNumber++;
-        UIManager.Instance.UpdateWaveNumber(waveNumber);
     }
 
     void SpawnEnemy(GameObject enemy)
