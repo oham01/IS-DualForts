@@ -18,7 +18,7 @@ public class Enemy : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        target = Waypoints.waypoints[waypointIndex];
+        target = Waypoints.waypoints[waypointIndex]; // Set first waypoint as target on spawn
     }
 
     // Move the enemy in the direction of the waypoint
@@ -70,6 +70,7 @@ public class Enemy : MonoBehaviour
         }
     }
 
+    // Destroy game object and play on death particle effect
     private void Die()
     {
         GameStateManager.Instance.KilledEnemy(diamondValue);
