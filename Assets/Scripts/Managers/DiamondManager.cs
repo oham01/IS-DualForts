@@ -6,13 +6,13 @@ public class DiamondManager : MonoBehaviour
 {
     public static DiamondManager Instance;
 
-    private DiamondCollector[] diamonds;
+    private DiamondCollector[] diamonds; // Array to hold the 2 diamonds
 
-    public GameObject diamondPrefab; // Assign your diamond prefab
+    public GameObject diamondPrefab; 
 
     public List<Transform> spawnPoints = new List<Transform>();
 
-    private List<int> lastUsedIndices = new List<int>();
+    private List<int> lastUsedIndices = new List<int>(); // Used to avoid respawning at same location
 
     private void Awake()
     {
@@ -32,13 +32,14 @@ public class DiamondManager : MonoBehaviour
 
     public void CheckForCollection()
     {
-
+        // Only collect diamonds if both are occupied
         if (diamonds.Length == 2 && diamonds[0].IsOccupied && diamonds[1].IsOccupied)
         {
             CollectDiamonds();
         }
     }
 
+    // Add diamonds to the balance
     private void CollectDiamonds()
     {
         foreach (var diamond in diamonds)
@@ -48,12 +49,13 @@ public class DiamondManager : MonoBehaviour
 
         GameStateManager.Instance.GotDiamonds(50);
 
+       // Respawn the diamonds again
        StartCoroutine(RespawnDiamonds());
     }
 
+    // Respawn diamonds coroutine
     private IEnumerator RespawnDiamonds()
     {
-
         if (spawnPoints.Count < 2)
         {
             Debug.LogError("Not enough spawn points assigned for diamond respawn.");
@@ -63,6 +65,7 @@ public class DiamondManager : MonoBehaviour
         List<int> usedIndices = new List<int>();
         diamonds = new DiamondCollector[2];
 
+        // Randomly choose new diamond spawn points
         for (int i = 0; i < 2; i++)
         {
             int index;
