@@ -47,9 +47,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bulletPrefab: {fileID: 5142520702175152734, guid: 5c4adccaecb76b14eba756b4568c477d, type: 3}
   firePoint: {fileID: 6116743091106033482}
-  range: 15
+  range: 31
   fireRate: 2
-  shootSound: {fileID: 8300000, guid: 56d4df57863111d43a2f294e15d550eb, type: 3}
+  shootSound: {fileID: 8300000, guid: 738da83e6bd1b7e43b117fe212055a5e, type: 3}
 --- !u!82 &2393178486701297695
 AudioSource:
   m_ObjectHideFlags: 0
@@ -60,7 +60,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 56d4df57863111d43a2f294e15d550eb, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 738da83e6bd1b7e43b117fe212055a5e, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1

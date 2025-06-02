@@ -46,7 +46,6 @@ public class DiamondManager : MonoBehaviour
            Destroy(diamond.gameObject);
         }
 
-        Debug.Log("Diamonds collected!");
         GameStateManager.Instance.GotDiamonds(50);
 
        StartCoroutine(RespawnDiamonds());
@@ -54,8 +53,6 @@ public class DiamondManager : MonoBehaviour
 
     private IEnumerator RespawnDiamonds()
     {
-        // Optional delay
-        //yield return new WaitForSeconds(1f);
 
         if (spawnPoints.Count < 2)
         {

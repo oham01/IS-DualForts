@@ -487,7 +487,7 @@ GameObject:
   - component: {fileID: 1443415008821865218}
   m_Layer: 0
   m_Name: Enemy_tough
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -552,10 +552,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 983d45775fb906b4bbc1ea927d7acf8a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 15
-  health: 100
-  diamondValue: 10
-  damage: 60
+  speed: 6
+  health: 750
+  diamondValue: 50
+  damage: 30
   deathEffect: {fileID: 2775357357664373769, guid: 10a1fb6a6363b1a4a94cff2ed2a7d08c, type: 3}
 --- !u!1 &2442385320245971453
 GameObject:
