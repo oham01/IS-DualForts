@@ -14,12 +14,12 @@ public class Tower : MonoBehaviour
     public float range = 15.0f;
     public float fireRate = 1.0f;
     private float fireCountdown = 0.0f;
+    public static float globalFireRateMultiplier = 1f;
 
     public AudioClip shootSound;
     private AudioSource audioSource;
 
-    //public float upgrade_amount = 2.0f;
-    public static float globalFireRateMultiplier = 1f;
+    
 
     // Start is called before the first frame update
     void Start()

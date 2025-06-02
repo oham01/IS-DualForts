@@ -36,7 +36,7 @@ public class GameStateManager : MonoBehaviour
         roundsSurvived = 0;
         UIManager.Instance.UpdateDiamondsCount(diamondCount);
         SoundManager.Instance.PlayBackgroundMusic();
-
+        Tower.globalFireRateMultiplier = 1f; // Reset tower fire rate
     }
 
     void Update()
