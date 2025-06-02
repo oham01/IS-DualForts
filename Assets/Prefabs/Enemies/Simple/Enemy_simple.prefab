@@ -24000,7 +24000,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 983d45775fb906b4bbc1ea927d7acf8a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 10
+  speed: 9
   health: 100
   diamondValue: 15
   damage: 5
