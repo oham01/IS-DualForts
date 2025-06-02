@@ -3539,6 +3539,7 @@ MonoBehaviour:
   playerNumber: 1
   q: {x: 0, y: 0, z: 0, w: 0}
   manual: 0
+  handSprite: {fileID: 0}
 --- !u!65 &483883240
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -5442,6 +5443,7 @@ MonoBehaviour:
   playerNumber: 1
   q: {x: 0, y: 0, z: 0, w: 0}
   manual: 0
+  handSprite: {fileID: 0}
 --- !u!65 &763629981
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -6064,6 +6066,10 @@ PrefabInstance:
     - target: {fileID: 4132312772176831909, guid: 64b182395c0b6744a920c74bce3ece13, type: 3}
       propertyPath: m_Name
       value: Rio
+      objectReference: {fileID: 0}
+    - target: {fileID: 4132312772176831909, guid: 64b182395c0b6744a920c74bce3ece13, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4132312772176831909, guid: 64b182395c0b6744a920c74bce3ece13, type: 3}
       propertyPath: m_TagString
@@ -7666,6 +7672,7 @@ MonoBehaviour:
   playerNumber: 1
   q: {x: 0, y: 0, z: 0, w: 0}
   manual: 0
+  handSprite: {fileID: 0}
 --- !u!65 &1151668550
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -8211,6 +8218,7 @@ MonoBehaviour:
   playerNumber: 1
   q: {x: 0, y: 0, z: 0, w: 0}
   manual: 0
+  handSprite: {fileID: 0}
 --- !u!1001 &1265965227
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -9389,6 +9397,7 @@ MonoBehaviour:
   playerNumber: 1
   q: {x: 0, y: 0, z: 0, w: 0}
   manual: 0
+  handSprite: {fileID: 21300000, guid: 0091a523a57f3cf4aba16ce773e1a9b5, type: 3}
 --- !u!114 &1440896353
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10005,6 +10014,7 @@ MonoBehaviour:
   playerNumber: 2
   q: {x: 0, y: 0, z: 0, w: 0}
   manual: 0
+  handSprite: {fileID: 21300000, guid: 0091a523a57f3cf4aba16ce773e1a9b5, type: 3}
 --- !u!54 &1471923281
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -10593,6 +10603,7 @@ MonoBehaviour:
   playerNumber: 1
   q: {x: 0, y: 0, z: 0, w: 0}
   manual: 0
+  handSprite: {fileID: 0}
 --- !u!65 &1554760528
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -12828,6 +12839,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Rio
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 24fc2c3e62c52bf4e9e63fd980b8e85d, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5678284494352805590, guid: 24fc2c3e62c52bf4e9e63fd980b8e85d, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
@@ -13118,6 +13133,7 @@ MonoBehaviour:
   playerNumber: 1
   q: {x: 0, y: 0, z: 0, w: 0}
   manual: 0
+  handSprite: {fileID: 0}
 --- !u!1 &1866559963
 GameObject:
   m_ObjectHideFlags: 0
