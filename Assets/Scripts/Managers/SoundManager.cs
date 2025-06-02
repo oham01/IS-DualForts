@@ -12,6 +12,7 @@ public class SoundManager : MonoBehaviour
     private Vector3 cameraPosition;
     private AudioSource musicSource;
 
+
     void Awake()
     {
         Instance = this;
