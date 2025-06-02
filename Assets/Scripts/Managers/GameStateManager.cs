@@ -113,7 +113,6 @@ public class GameStateManager : MonoBehaviour
     public void WinGame()
     {
         gameEnded = true;
-        SoundManager.Instance.PlayVictorySound();
         SceneManager.LoadScene(winScene);
     }
 }
