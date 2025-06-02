@@ -6,6 +6,7 @@ public class EndScreen : MonoBehaviour
 {
     void Start()
     {
+        SoundManager.Instance.PlayDefeatSound();
         UIManager.Instance.ShowGameOver(GameStateManager.roundsSurvived);
     }
 }

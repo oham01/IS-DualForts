@@ -101,7 +101,7 @@ public class GameStateManager : MonoBehaviour
     public void EndGame()
     {
         gameEnded = true;
-        SceneManager.LoadScene(endScene);
+        SceneManager.LoadScene(endScene);   
     }
 
     public void Retry()
@@ -113,6 +113,7 @@ public class GameStateManager : MonoBehaviour
     public void WinGame()
     {
         gameEnded = true;
+        SoundManager.Instance.PlayVictorySound();
         SceneManager.LoadScene(winScene);
     }
 }

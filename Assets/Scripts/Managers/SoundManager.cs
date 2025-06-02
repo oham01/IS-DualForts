@@ -8,9 +8,12 @@ public class SoundManager : MonoBehaviour
 
     public AudioClip diamondCollectSound;
     public AudioClip backgroundMusic;
+    public AudioClip victorySound;
+    public AudioClip defeatSound;
 
     private Vector3 cameraPosition;
     private AudioSource musicSource;
+
 
     void Awake()
     {
@@ -45,6 +48,16 @@ public class SoundManager : MonoBehaviour
     {
         if (musicSource.isPlaying)
             musicSource.Stop();
+    }
+
+    public void PlayVictorySound()
+    {
+        PlaySound(victorySound);
+    }
+
+    public void PlayDefeatSound()
+    {
+        PlaySound(defeatSound);
     }
 
 }

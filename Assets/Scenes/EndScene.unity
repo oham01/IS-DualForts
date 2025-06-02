@@ -1189,6 +1189,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   diamondCollectSound: {fileID: 8300000, guid: 29d0619ae9ed6884985a7d6c32be2728, type: 3}
   backgroundMusic: {fileID: 8300000, guid: 29ad069bce281de4a86f0e710cdea34f, type: 3}
+  victorySound: {fileID: 8300000, guid: 1ad5a5aa0ce2ccd4fbf5767acff44b12, type: 3}
+  defeatSound: {fileID: 8300000, guid: 85253a001565e9c429f37dad1207d0c1, type: 3}
 --- !u!4 &102842035 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4383882971595202, guid: e1154cf6ac27b2f45b4ae35582e7e363, type: 3}
