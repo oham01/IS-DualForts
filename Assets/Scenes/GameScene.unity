@@ -2089,6 +2089,62 @@ MonoBehaviour:
     - enemy: {fileID: 872468675380951015, guid: f5a35bb32aed8d1429f59df16e708698, type: 3}
       count: 3
     rate: 3.5
+  - enemies:
+    - enemy: {fileID: 2332828978059243644, guid: e62fed41bf180524aafc428390e83e50, type: 3}
+      count: 17
+    - enemy: {fileID: 2332828978059243644, guid: 88adae8f10da82946b203d40780654c8, type: 3}
+      count: 10
+    - enemy: {fileID: 2332828978059243644, guid: 43fefeeb48208b947924a3d0387f1d49, type: 3}
+      count: 5
+    - enemy: {fileID: 4436146854726517230, guid: e887ab29e1207024c8dc770fb366f447, type: 3}
+      count: 3
+    - enemy: {fileID: 3188704276672665356, guid: 718d6e0bcfac4f948a3bc59056ad0f2c, type: 3}
+      count: 3
+    - enemy: {fileID: 872468675380951015, guid: f5a35bb32aed8d1429f59df16e708698, type: 3}
+      count: 3
+    rate: 3.5
+  - enemies:
+    - enemy: {fileID: 2332828978059243644, guid: e62fed41bf180524aafc428390e83e50, type: 3}
+      count: 17
+    - enemy: {fileID: 2332828978059243644, guid: 88adae8f10da82946b203d40780654c8, type: 3}
+      count: 10
+    - enemy: {fileID: 2332828978059243644, guid: 43fefeeb48208b947924a3d0387f1d49, type: 3}
+      count: 5
+    - enemy: {fileID: 4436146854726517230, guid: e887ab29e1207024c8dc770fb366f447, type: 3}
+      count: 3
+    - enemy: {fileID: 3188704276672665356, guid: 718d6e0bcfac4f948a3bc59056ad0f2c, type: 3}
+      count: 3
+    - enemy: {fileID: 872468675380951015, guid: f5a35bb32aed8d1429f59df16e708698, type: 3}
+      count: 3
+    rate: 3.5
+  - enemies:
+    - enemy: {fileID: 2332828978059243644, guid: e62fed41bf180524aafc428390e83e50, type: 3}
+      count: 17
+    - enemy: {fileID: 2332828978059243644, guid: 88adae8f10da82946b203d40780654c8, type: 3}
+      count: 10
+    - enemy: {fileID: 2332828978059243644, guid: 43fefeeb48208b947924a3d0387f1d49, type: 3}
+      count: 5
+    - enemy: {fileID: 4436146854726517230, guid: e887ab29e1207024c8dc770fb366f447, type: 3}
+      count: 3
+    - enemy: {fileID: 3188704276672665356, guid: 718d6e0bcfac4f948a3bc59056ad0f2c, type: 3}
+      count: 3
+    - enemy: {fileID: 872468675380951015, guid: f5a35bb32aed8d1429f59df16e708698, type: 3}
+      count: 3
+    rate: 3.5
+  - enemies:
+    - enemy: {fileID: 2332828978059243644, guid: e62fed41bf180524aafc428390e83e50, type: 3}
+      count: 17
+    - enemy: {fileID: 2332828978059243644, guid: 88adae8f10da82946b203d40780654c8, type: 3}
+      count: 10
+    - enemy: {fileID: 2332828978059243644, guid: 43fefeeb48208b947924a3d0387f1d49, type: 3}
+      count: 5
+    - enemy: {fileID: 4436146854726517230, guid: e887ab29e1207024c8dc770fb366f447, type: 3}
+      count: 3
+    - enemy: {fileID: 3188704276672665356, guid: 718d6e0bcfac4f948a3bc59056ad0f2c, type: 3}
+      count: 3
+    - enemy: {fileID: 872468675380951015, guid: f5a35bb32aed8d1429f59df16e708698, type: 3}
+      count: 3
+    rate: 3.5
 --- !u!1 &220600112
 GameObject:
   m_ObjectHideFlags: 0
